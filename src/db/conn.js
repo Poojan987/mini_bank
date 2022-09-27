@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
+
+// process.env.DATABASE
+const DB = process.env.DATABASE.replace(
+  "<password>",
+  process.env.DATABASE_PASSWORD
+);
+// const DB = process.env.DATABASE;
 mongoose
-  .connect("mongodb://localhost:27017/bank", {
+  .connect(DB, {
     dbName: "bank",
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
@@ -9,6 +18,7 @@ mongoose
   .then(() => {
     console.log("connection sucess");
   })
-  .catch(() => {
+  .catch((e) => {
+    console.log(e);
     console.log("unsuccess");
   });
