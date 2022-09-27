@@ -1,0 +1,10 @@
+node_modules
+/core/key.json
+/key.json
+core/key.json
+/Django/key.json
+/frontend/node_modules
+/env
+/commandss.txt
+/frontend/src/components/is_production.txt
+/frontend/.env
